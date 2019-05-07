@@ -1,6 +1,8 @@
-function takeANumber(array,name) {
-  array.push(name);
-  return `Welcome, ${name}. You are number ${array.length} in line.`;
+ var placeInLine = 1;
+function takeANumber(array) {
+  array.push(placeInLine);
+  placeInLine += 1;
+  return `Welcome, You are number ${placeInLine - 1}.`;
 }
 
 function nowServing(array) {
@@ -24,4 +26,8 @@ function currentLine(array) {
   else { 
     return "The line is currently empty.";
   }
+}
+
+function newDay() {
+  placeInLine = 1;
 }
