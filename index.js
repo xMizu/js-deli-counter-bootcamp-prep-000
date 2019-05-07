@@ -1,23 +1,27 @@
 function takeANumber(array,name) {
-  array.push(name)
-  return `Welcome, ${name}. You are number ${array.length} in line.`
+  array.push(name);
+  return `Welcome, ${name}. You are number ${array.length} in line.`;
 }
 
 function nowServing(array) {
   if (array.length > 0) {
     return `Currently serving ${array.shift()}.`;
   }
-    else {return 'There is nobody waiting to be served!';
+  else {
+    return "There is nobody waiting to be served!";
   }
 }
 
 function currentLine(array) {
-  let queue = "The line is currently: ";
-  if (array.length > 0) {
-    for (var i = 0;i < array.length-1;i++)
-    {queue = queue + `${i+1}. ${array[i]}, `;}
-	queue = queue + `${i+1}. ${array[i]}`;
+  var deliLine = "The line is currently:";
+  var lineList = [];
+  if  (array.length > 0) {
+    for (let i = 0; i < array.length; i++) {
+      lineList.push(` ${i + 1}. ${array[i]}`);
+    }
+    return deliLine + lineList;
   }
-	else {queue = "The line is currently empty."}
-  return queue;
+  else { 
+    return "The line is currently empty.";
+  }
 }
